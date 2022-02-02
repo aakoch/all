@@ -1,0 +1,41 @@
+{
+  "name": "all",
+  "version": "0.0.0",
+  "description": "End-to-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap"
+  },
+  "keywords": [
+    "pug"
+  ],
+  "author": "Adam Koch (aakoch)",
+  "license": "ISC",
+  "dependencies": {
+    "@aakoch/generator": "file:../generator",
+    "@foo-dog/utils": "^0.2.2",
+    "@jaredpalmer/wrapline": "^2.0.2",
+    "chalk": "^5.0.0",
+    "concat-stream": "^2.0.0",
+    "debug": "^4.3.2",
+    "foo-dog-attrs": "file:../foo-dog-attrs",
+    "indent-transformer": "^0.3.0",
+    "jsonparse": "^1.3.1",
+    "minimist": "^1.2.5",
+    "post-lexing-transformer": "file:../post-lexing-transformer",
+    "pug-lexing-transformer": "file:../pug-lexing-transformer",
+    "pug-line-lexer": "file:../pug-line-lexer"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@istanbuljs/esm-loader-hook": "^0.1.2",
+    "tap": "^15.1.5"
+  },
+  "tap": {
+    "node-arg": [
+      "--no-warnings",
+      "--experimental-loader",
+      "@istanbuljs/esm-loader-hook"
+    ]
+  }
+}
