@@ -25,7 +25,7 @@ Last step is generating the HTML in generator. The output is placed in ${product
 
 Create standard directory structure so we can more readily pipeline.
 
-- test/in
+- build/in (was test/in)
 - build/out
 
 ## Some Scripts
