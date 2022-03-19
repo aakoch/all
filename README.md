@@ -3,7 +3,7 @@
 Combine steps
 
 ## Flow
-pug-lexing-transformer -> foo-dog-attrs -> generator
+lexing-transformer -> foo-dog-attrs -> generator
 
 ## Testing
 
@@ -15,7 +15,7 @@ ${productRoot}/workspaces/test/in/*.json
 1. Expected output (the end)
 ${productRoot}/workspaces/test/expected/*.html
 
-Input must be processed by pug-lexing-transformer first. The output is placed in ${productRoot}/workspaces/pug-lexing-transformer/build/*.\[json|err\]
+Input must be processed by lexing-transformer first. The output is placed in ${productRoot}/workspaces/lexing-transformer/build/*.\[json|err\]
 
 Input must be processed by foo-dog-attrs. The output is placed in ${productRoot}/workspaces/foo-dog-attrs/??
 
@@ -32,27 +32,27 @@ Create standard directory structure so we can more readily pipeline.
 
 ```
 cd ../test
-mkdir -p build/pug
-for f in $(ls pug/*.pug); do node ../all/src/cli $f build/$f.json 2> build/$f.parser.err; done
-find build/pug/ -size 0c -exec rm {} \;
+mkdir -p build/
+for f in $(ls /*.); do node ../all/src/cli $f build/$f.json 2> build/$f.parser.err; done
+find build/ -size 0c -exec rm {} \;
 
-for f in $(ls pug/*.pug); do node ../foo-dog-attrs/src/cli $f build/$f.json 2> build/$f.attrs.err; done
+for f in $(ls /*.); do node ../foo-dog-attrs/src/cli $f build/$f.json 2> build/$f.attrs.err; done
 
-find build/pug/ -size 0c -exec rm {} \;
+find build/ -size 0c -exec rm {} \;
 
-for f in $(ls build/pug/*.json); do node ../generator/src/cli $f build/$f.html 2> $f.err; done
+for f in $(ls build/*.json); do node ../generator/src/cli $f build/$f.html 2> $f.err; done
 find build/ -size 0c -exec rm {} \;
 rename -d ".json" build/test/*.json.html
 
-/Users/aakoch/projects/new-foo/workspaces/test/build/pug/attrs-data.pug.err
+/Users/aakoch/projects/new-foo/workspaces/test/build/attrs-data..err
 
 
 
-pj pug-lexing-transformer
-mkdir -p build/test/pug
-for f in $(ls test/pug/*.pug); do node src/cli $f build/$f.json 2> build/$f.err; done
-find build/test/pug/ -size 0c -exec rm {} \;
-mv build/test/pug/*.json ../foo-dog-attrs/test/json/
+pj lexing-transformer
+mkdir -p build/test/
+for f in $(ls test/*.); do node src/cli $f build/$f.json 2> build/$f.err; done
+find build/test/ -size 0c -exec rm {} \;
+mv build/test/*.json ../foo-dog-attrs/test/json/
 
 pj foo-dog-attrs
 for f in $(ls test/json/*.json); do node src/cli $f build/$f 2> $f.err; done
