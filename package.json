@@ -1,30 +1,30 @@
 {
-  "name": "all",
-  "version": "0.0.0",
+  "name": "@foo-dog/all",
+  "version": "0.1.0",
   "description": "End-to-end",
   "main": "index.js",
   "scripts": {
     "test": "tap"
   },
   "keywords": [
-    "pug"
+    "pug",
+    "foo-dog"
   ],
   "author": "Adam Koch (aakoch)",
   "license": "ISC",
   "dependencies": {
-    "@aakoch/generator": "file:../generator",
+    "@foo-dog/attrs": "file:../foo-dog-attrs",
+    "@foo-dog/generator": "file:../generator",
+    "@foo-dog/indent-transformer": "file:../indent-transformer",
+    "@foo-dog/lexing-transformer": "file:../lexing-transformer",
+    "@foo-dog/line-lexer": "file:../line-lexer",
+    "@foo-dog/post-lexing-transformer": "file:../post-lexing-transformer",
     "@foo-dog/utils": "^0.2.2",
     "@jaredpalmer/wrapline": "^2.0.2",
     "chalk": "^5.0.0",
     "concat-stream": "^2.0.0",
     "debug": "^4.3.2",
-    "foo-dog-attrs": "file:../foo-dog-attrs",
-    "indent-transformer": "^0.3.0",
-    "jsonparse": "^1.3.1",
-    "minimist": "^1.2.5",
-    "post-lexing-transformer": "file:../post-lexing-transformer",
-    "pug-lexing-transformer": "file:../pug-lexing-transformer",
-    "pug-line-lexer": "file:../pug-line-lexer"
+    "jsonparse": "^1.3.1"
   },
   "type": "module",
   "devDependencies": {

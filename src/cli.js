@@ -12,7 +12,7 @@ import fs from 'fs'
 import stream from 'stream'
 import indentTransformer from 'indent-transformer';
 import WrapLine from '@jaredpalmer/wrapline'
-import LexingTransformer from 'pug-lexing-transformer'
+import LexingTransformer from 'lexing-transformer'
 import { PostLexingTransformer } from 'post-lexing-transformer'
 import { inspect } from 'util';
 

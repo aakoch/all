@@ -4,7 +4,7 @@ import debugFunc from 'debug'
 const debug = debugFunc('all')
 import { inspect } from 'util'
 import stream from 'stream'
-import LexingTransformer from 'pug-lexing-transformer'
+import LexingTransformer from 'lexing-transformer'
 import { PostLexingTransformer } from 'post-lexing-transformer'
 import concat from 'concat-stream'
 import { fileURLToPath } from 'url'
