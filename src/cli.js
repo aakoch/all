@@ -12,13 +12,13 @@ import fs from 'fs'
 import stream from 'stream'
 import indentTransformer from 'indent-transformer';
 import WrapLine from '@jaredpalmer/wrapline'
-import LexingTransformer from 'lexing-transformer'
-import { PostLexingTransformer } from 'post-lexing-transformer'
-import { inspect } from 'util';
+import LexingTransformer from '@foo-dog/lexing-transformer';
+import { PostLexingTransformer } from '@foo-dog/post-lexing-transformer'
+import { inspect } from '@foo-dog/utils';
 
-import AttrsCliTransformer from '../../foo-dog-attrs/src/cliTransformer.js'
+import AttrsCliTransformer from '../../attrs/src/cliTransformer.js'
 import GeneratorCliTransformer from '../../generator/src/cliTransformer.js'
-import { AttrsResolver } from 'foo-dog-attrs'
+import { AttrsResolver } from '@foo-dog/attrs'
 
 
 function printUsage() {

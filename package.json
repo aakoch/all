@@ -13,7 +13,7 @@
   "author": "Adam Koch (aakoch)",
   "license": "ISC",
   "dependencies": {
-    "@foo-dog/attrs": "file:../foo-dog-attrs",
+    "@foo-dog/attrs": "file:../attrs",
     "@foo-dog/generator": "file:../generator",
     "@foo-dog/indent-transformer": "file:../indent-transformer",
     "@foo-dog/lexing-transformer": "file:../lexing-transformer",

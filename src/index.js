@@ -4,8 +4,8 @@ import debugFunc from 'debug'
 const debug = debugFunc('all')
 import { inspect } from 'util'
 import stream from 'stream'
-import LexingTransformer from 'lexing-transformer'
-import { PostLexingTransformer } from 'post-lexing-transformer'
+import LexingTransformer from '@foo-dog/lexing-transformer'
+import { PostLexingTransformer } from '@foo-dog/post-lexing-transformer'
 import concat from 'concat-stream'
 import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url);
@@ -16,10 +16,9 @@ import WrapLine from '@jaredpalmer/wrapline'
 import { exists } from '@foo-dog/utils'
 import chalk from 'chalk';
 import util from 'util'
-import { AttrsResolver } from 'foo-dog-attrs'
+import { AttrsResolver } from '@foo-dog/attrs'
 const attrsResolver = new AttrsResolver()
-import generator from '@aakoch/generator';
-
+import generator from '@foo-dog/generator';
 
 function walkLookingForAttributes(arr) {
   debug('walk: arr=', util.inspect(arr, false, 10))
@@ -80,7 +79,6 @@ async function processFile(options) {
         // fs.writeFileSync('build/' + path.basename(options.in.name) + ".html", out);
         stream.Readable.from(out).pipe(options.out.createStream())
       }));
-
 
     stream.finished(fullStream, async (err) => {
       debug("Entering stream finished");
