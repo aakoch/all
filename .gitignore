@@ -4,3 +4,5 @@ node_modules
 build
 coverage
 test.json
+*.iml
+package-lock.json.backup
